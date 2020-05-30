@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+
+html,body, #__next{
+   @apply h-full;
+}
+
+body {
+    @apply font-sans;
+    background-color: #f5f5f7;
+}
+
+@tailwind utilities;
