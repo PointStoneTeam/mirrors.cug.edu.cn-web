@@ -6,7 +6,7 @@ import PostCatalog from '../../../components/blog/post-catalog';
 
 import BaseLayout from '../../../components/layouts/base';
 
-import { getPostBySlug, getAllPosts } from '../../lib/api/blog';
+import { getPostBySlug, getAllPosts } from '../../../lib/api/blog';
 import PostContent from '../../../components/blog/post-content';
 
 import MarkdownIt from 'markdown-it';
