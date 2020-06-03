@@ -1,7 +1,7 @@
 ---
-layout: help
-category: help
-mirrorid: epel
+category: mirrors
+mirrorname: epel
+title: EPEL
 ---
 
 ## EPEL 镜像使用帮助

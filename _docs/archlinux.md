@@ -1,7 +1,7 @@
 ---
-category: help
-layout: help
-mirrorid: archlinux
+category: mirrors
+mirrorname: archlinux
+title: Arch Linux
 ---
 
 ## Arch Linux 软件仓库镜像使用帮助

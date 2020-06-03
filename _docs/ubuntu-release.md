@@ -1,10 +1,10 @@
 ---
 category: mirrors
-mirrorname: ubuntu
-title: Ubuntu
+mirrorname: ubuntu-release
+title: Ubuntu Release
 ---
 
-Ubuntu 镜像使用帮助
+Ubuntu Release 镜像使用帮助
 ===================
 
 Ubuntu 的软件源配置文件是
