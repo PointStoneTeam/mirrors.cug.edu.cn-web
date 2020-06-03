@@ -4,7 +4,7 @@ import BaseLayout from '../../components/layouts/base'
 import RadioGroup from '../../components/radio-group'
 import Mirror from '../../components/mirrors/mirror'
 import { debounce } from 'lodash';
-import { getAllPosts } from '../../lib/api'
+import { getAllPosts } from '../../lib/api/blog'
 
 import Link from 'next/link'
 
@@ -17,11 +17,12 @@ export default function Home({ mirrorsData = [], latestNews = [] }) {
   const [currentSearchValue, setCurrentSearchValue] = useState('');
   const mirrors = useMemo(() => {
     return mirrorsData.filter(item => {
-      const { name, displayName, msg } = item;
+      const { name, display_name: displayName, description } = item;
       // 分类筛选
-      const catalogFilter = currentCatalog === 'all' || item.catalog.includes(currentCatalog);
+      // const catalogFilter = currentCatalog === 'all' || item.catalog.includes(currentCatalog);
+      const catalogFilter = currentCatalog === 'all' || item.catalog === currentCatalog;
       // 搜索筛选
-      const searchFilter = currentSearchValue === '' || [name, displayName, msg].some(text => text.includes(currentSearchValue));
+      const searchFilter = currentSearchValue === '' || [name, displayName, description].some(text => text.includes(currentSearchValue));
       return catalogFilter && searchFilter;
     })
 
@@ -38,7 +39,7 @@ export default function Home({ mirrorsData = [], latestNews = [] }) {
     <BaseLayout>
       <main className="container mx-auto md:flex justify-between py-4 px-6">
         <section className="flex-grow ">
-          <header className="sticky top-12 md:top-16 py-4 bg-apple-gray flex justify-between items-center md:block">
+          <header className="sticky top-12 md:top-16 py-4 bg-apple-gray flex justify-between items-center md:block z-50">
             <h1 className="text-2xl md:mb-4">镜像列表</h1>
             <div className="flex  justify-between items-center">
               <div className="flex-grow">
@@ -51,7 +52,7 @@ export default function Home({ mirrorsData = [], latestNews = [] }) {
                     },
                     {
                       text: '系统',
-                      value: 'os'
+                      value: 'system'
                     },
                     {
                       text: '软件',
@@ -118,7 +119,7 @@ export default function Home({ mirrorsData = [], latestNews = [] }) {
 }
 
 export async function getStaticProps(context) {
-  const res = await got('https://res.devcloud.huaweicloud.com/obsdevui/cn-north-1/mirror/8.2.4.001/frameworks/assets/mirrors.json').json()
+  const res = await got('http://mirrors.cug123.com/api/getAllJob').json()
 
   const latestNews = getAllPosts([
     'title',
@@ -130,7 +131,7 @@ export async function getStaticProps(context) {
   }).slice(0, 5)
   return {
     props: {
-      mirrorsData: res,
+      mirrorsData: res.data.list,
       latestNews: latestNews
     }, // will be passed to the page component as props
   }

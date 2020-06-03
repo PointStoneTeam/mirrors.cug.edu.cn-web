@@ -8,7 +8,7 @@ export function getDocsSlugs() {
   return fs.readdirSync(postsDirectory)
 }
 
-export function getDocsBySlug(slug, fields = []) {
+export function getDocBySlug(slug, fields = []) {
   const realSlug = slug.replace(/\.md$/, '')
   const fullPath = join(postsDirectory, `${realSlug}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
@@ -34,10 +34,9 @@ export function getDocsBySlug(slug, fields = []) {
 }
 
 export function getAllDocs(fields = []) {
-  const slugs = getPostSlugs()
-  const posts = slugs
-    .map((slug) => getPostBySlug(slug, fields))
-    // sort posts by date in descending order
-    .sort((post1, post2) => (post1.date > post2.date ? '-1' : '1'))
-  return posts
+  const slugs = getDocsSlugs();
+  const docs = slugs
+    .map((slug) => getDocBySlug(slug, fields))
+    .sort()
+  return docs
 }

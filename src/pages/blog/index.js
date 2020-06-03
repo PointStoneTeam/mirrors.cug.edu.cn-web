@@ -1,6 +1,6 @@
 import BaseLayout from '../../components/layouts/base'
 import PostCatalog from '../../components/blog/post-catalog';
-import { getAllPosts } from '../../lib/api'
+import { getAllPosts } from '../../lib/api/blog'
 
 import Link from 'next/link'
 

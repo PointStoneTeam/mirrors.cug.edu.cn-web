@@ -6,7 +6,7 @@ import PostCatalog from '../../../components/blog/post-catalog';
 
 import BaseLayout from '../../../components/layouts/base';
 
-import { getPostBySlug, getAllPosts } from '../../../lib/api'
+import { getPostBySlug, getAllPosts } from '../../lib/api/blog';
 import PostContent from '../../../components/blog/post-content';
 
 import MarkdownIt from 'markdown-it';
@@ -64,7 +64,6 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const posts = getAllPosts(['slug'])
-  console.log(posts);
   return {
     paths: posts.map((posts) => {
       return {

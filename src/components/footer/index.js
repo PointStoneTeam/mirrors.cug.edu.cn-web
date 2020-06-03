@@ -10,7 +10,7 @@ export default function Footer() {
           由点石团队维护
         </div>
         <div className="mt-2 text-xs md:text-sm">
-          2020 - 2020
+          2013 - 2020
         </div>
       </div>
     </footer>

@@ -25,11 +25,16 @@ const configMap = {
     color: "#722ed1",
     background: "#f9f0ff",
     borderColor: "#d3adf7"
-  }
+  },
+  defalut: {
+    color: "rgba(0,0,0,.65)",
+    background: "#fafafa",
+    borderColor: "#d9d9d9"
+  },
 }
 
 export default function Tag({ children, color, }) {
-  const {color:textColor, background, borderColor} = configMap[color] || configMap['blue'];
+  const {color:textColor, background, borderColor} = configMap[color] || configMap['defalut'];
   return (
     <span className="border py-0 px-1 md:px-2 md:py-1 text-xs rounded" style={{color:textColor, background, borderColor}}>
       {children}

@@ -9,5 +9,6 @@ html,body, #__next{
 body {
     @apply font-sans;
     background-color: #f5f5f7;
+    -webkit-tap-highlight-color: transparent;
 }
 
