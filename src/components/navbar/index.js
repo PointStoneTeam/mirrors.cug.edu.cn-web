@@ -13,7 +13,7 @@ export default function Navbar() {
           <Link href="/"><a>中国地质大学开源镜像站</a></Link>
         </div>
         <div className="hidden md:block text-sm text-gray-700">
-          <Link href="/docs"><a className="mr-4">文档</a></Link>
+          <Link href="/docs/overview"><a className="mr-4">文档</a></Link>
           <Link href="/blog"><a className="mr-4">博客</a></Link>
           <a href="https://www.pointstone.org" target="_blank">点石团队</a>
         </div>
@@ -24,7 +24,7 @@ export default function Navbar() {
               <>
                 <div className="fixed top-12 bg-white w-full left-0 z-20">
                   <ul className="list-none w-full px-12 py-3 text-sm text-gray-700 divide-y divide-gray-300">
-                    <li className="py-2"><Link href="/docs"><a className="block w-full">文档</a></Link></li>
+                    <li className="py-2"><Link href="/docs/overview"><a className="block w-full">文档</a></Link></li>
                     <li className="py-2"><Link href="/blog"><a className="block w-full">博客</a></Link></li>
                     <li className="py-2"><a href="https://www.pointstone.org" target="_blank" className="block w-full">点石团队</a></li>
                   </ul>
