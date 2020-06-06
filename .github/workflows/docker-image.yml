@@ -19,6 +19,6 @@ jobs:
       with:
         username: PointStoneTeam
         password: ${{ github.token }}
-        registry: docker.pkg.github.com/pointstoneteam
-        repository: mirrors.cug.edu.cn-web
+        registry: docker.pkg.github.com
+        repository: pointstoneteam/mirrors.cug.edu.cn-web
         tag_with_sha: true
