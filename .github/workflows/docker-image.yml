@@ -21,4 +21,4 @@ jobs:
         password: ${{ github.token }}
         registry: docker.pkg.github.com
         repository: mirrors.cug.edu.cn-web
-        tags: $(date +%s)
+        tag_with_sha: true
