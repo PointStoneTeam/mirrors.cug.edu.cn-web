@@ -10,7 +10,7 @@ WORKDIR /app
 
 COPY package.json yarn.lock /app/
 
-RUN yarn install --prod --frozen-lockfile
+RUN yarn install --frozen-lockfile
 
 COPY . /app
 
