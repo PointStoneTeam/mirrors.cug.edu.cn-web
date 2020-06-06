@@ -14,6 +14,8 @@ yarn dev
 ## 部署
 
 ```bash
+
 docker run -p 3000:3000 mirrors.cug.edu.cn-web
+
 ```
 
