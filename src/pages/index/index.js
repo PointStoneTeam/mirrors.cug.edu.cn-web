@@ -119,7 +119,7 @@ export default function Home({ mirrorsData = [], latestNews = [] }) {
 }
 
 export async function getServerSideProps(context) {
-  const res = await got('http://mirrors.cug123.com/api/getAllJob').json()
+  const res = await got(`${process.env.API_URL}/api/getAllJob`).json()
 
   const latestNews = getAllPosts([
     'title',
