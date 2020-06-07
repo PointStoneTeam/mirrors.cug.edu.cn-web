@@ -17,8 +17,8 @@ jobs:
     - name: Build and push Docker images
       uses: docker/build-push-action@v1.1.0
       with:
-        username: PointStoneTeam
-        password: ${{ github.token }}
-        registry: docker.pkg.github.com
-        repository: pointstoneteam/mirrors.cug.edu.cn-web/mirrors.cug.edu.cn-web
+        username: ${{ secrets.registry_user_name }}
+        password: ${{ secrets.registry_user_password }}
+        registry: registry.cn-beijing.aliyuncs.com
+        repository: pointstone/mirrors.cug.edu.cn-web
         tag_with_sha: true
