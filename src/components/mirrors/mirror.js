@@ -54,7 +54,7 @@ export default function Mirror({ mirrorInfo }) {
                 </div>
             </section>
             <section className="overlay flex px-3 justify-around items-center absolute top-0 right-0 bottom-0 left-0 transition-all duration-300">
-                <a href={`http://mirrors.cug123.com/${mirrorInfo.name}`} className="flex flex-col flex-grow justify-center items-center">
+                <a href={`${process.env.API_URL}/${mirrorInfo.name}`} className="flex flex-col flex-grow justify-center items-center">
                     <img className="h-8 mb-2 flex-grow" src="/icons/files.svg" />
                     <div className="text-xs text-gray-600">文件目录</div>
                 </a>
