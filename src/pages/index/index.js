@@ -5,6 +5,7 @@ import RadioGroup from '../../components/radio-group'
 import Mirror from '../../components/mirrors/mirror'
 import { debounce } from 'lodash';
 import { getAllPosts } from '../../lib/api/blog'
+import { getAllDocs } from '../../lib/api/docs'
 
 import Link from 'next/link'
 
@@ -12,7 +13,7 @@ import Link from 'next/link'
 import got from 'got';
 import { useMemo, useEffect, useState, useCallback } from 'react';
 
-export default function Home({ mirrorsData = [], latestNews = [] }) {
+export default function Home({ mirrorsData = [], latestNews = [], docs = [] }) {
   const [currentCatalog, setCurrentCatalog] = useState('all');
   const [currentSearchValue, setCurrentSearchValue] = useState('');
   const mirrors = useMemo(() => {
@@ -74,7 +75,7 @@ export default function Home({ mirrorsData = [], latestNews = [] }) {
               (<section className="py-4 grid grid-cols-1 md:grid-cols-2 gap-4">
                 {
                   mirrors.map(mirrorInfo => (
-                    <Mirror key={mirrorInfo.name} mirrorInfo={mirrorInfo} />
+                    <Mirror key={mirrorInfo.name} mirrorInfo={mirrorInfo} hasDoc={docs.includes(mirrorInfo.name)} />
                   ))
                 }
               </section>) :
@@ -98,7 +99,7 @@ export default function Home({ mirrorsData = [], latestNews = [] }) {
                   return (
                     <li className="py-3" key="news.title">
                       <Link href={`/blog/posts/${news.slug}`}>
-                        <a className="block flex items-center">
+                        <a className="flex items-center">
                           <span className="text-sm">{news.date}</span>
                           <span className="flex-1 ml-3">{news.title}</span>
                         </a>
@@ -129,10 +130,12 @@ export async function getServerSideProps(context) {
   ]).filter(item => {
     return item.catalog === 'news'
   }).slice(0, 5)
+  const docs = getAllDocs(['slug']).map(item=>item.slug);
   return {
     props: {
+      docs,
+      latestNews,
       mirrorsData: res.data.list,
-      latestNews: latestNews
     }, // will be passed to the page component as props
   }
 }

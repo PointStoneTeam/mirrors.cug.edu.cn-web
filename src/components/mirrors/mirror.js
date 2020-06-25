@@ -27,7 +27,7 @@ const statusMap = {
     }
 }
 
-export default function Mirror({ mirrorInfo }) {
+export default function Mirror({ mirrorInfo, hasDoc = false }) {
     const { text: statusText, color: statusColor } = statusMap[String(mirrorInfo.latest_sync_status)];
     return (
         <div className="mirror-item bg-white p-4 flex  transition-all duration-200 relative">
@@ -58,13 +58,17 @@ export default function Mirror({ mirrorInfo }) {
                     <img className="h-8 mb-2 flex-grow" src="/icons/files.svg" />
                     <div className="text-xs text-gray-600">文件目录</div>
                 </a>
-                <div className="divider"></div>
-                <Link href={`/docs/${mirrorInfo.name}`}>
-                    <a className="flex flex-col items-center flex-grow justify-center">
-                        <img className="h-8 mb-2 flex-grow" src="/icons/docs.svg" />
-                        <div className="text-xs text-gray-600">帮助文档</div>
-                    </a>
-                </Link>
+                {hasDoc && (
+                    <>
+                        <div className="divider"></div>
+                        <Link href={`/docs/${mirrorInfo.name}`}>
+                            <a className="flex flex-col items-center flex-grow justify-center">
+                                <img className="h-8 mb-2 flex-grow" src="/icons/docs.svg" />
+                                <div className="text-xs text-gray-600">帮助文档</div>
+                            </a>
+                        </Link>
+                    </>
+                )}
             </section>
             <style jsx>{`
             .overlay{

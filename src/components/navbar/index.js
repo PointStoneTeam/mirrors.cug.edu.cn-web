@@ -9,7 +9,11 @@ export default function Navbar() {
   return (
     <nav className={`nav ${expand ? '' : 'navblur'} fixed top-0 left-0 z-10 w-full h-12 md:h-16`}>
       <div className="container flex items-center justify-between py-0 px-6 my-0 mx-auto h-full">
-        <div className="text md:text-xl">
+        <div className="text md:text-xl flex items-center">
+          <img
+            className="h-6 mr-2 md:h-10 md:mr-4"
+            src={`/logo.png`}
+          />
           <Link href="/"><a>中国地质大学开源镜像站</a></Link>
         </div>
         <div className="hidden md:block text-sm text-gray-700">
