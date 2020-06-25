@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="flex items-center">
           <img
             className="h-6 mr-2 md:h-10 md:mr-3"
-            src={`/logo.png`}
+            src={`/icons/logo.png`}
           />
           <h2 className="text-md md:text-xl">中国地质大学开源镜像站</h2>
         </div>

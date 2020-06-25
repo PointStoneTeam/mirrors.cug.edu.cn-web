@@ -7,6 +7,7 @@ export default function BaseLayout({ children }) {
     <>
      <Head>
         <title>中国地质大学开源镜像站</title>
+        <link rel="shortcut icon" href="/icons/favicon.ico" />
       </Head>
       <Navbar />
       <div className="flex flex-col pt-16 min-h-full box-border">
