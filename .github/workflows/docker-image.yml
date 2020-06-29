@@ -22,3 +22,4 @@ jobs:
         registry: registry.cn-beijing.aliyuncs.com
         repository: pointstone/mirrors.cug.edu.cn-web
         tag_with_sha: true
+        tags: latest
