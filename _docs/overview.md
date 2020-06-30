@@ -1,9 +1,15 @@
 ---
 category: mirrors
-mirrorname: epel
+mirrorname: overview
 title: Overview
 ---
 
-## 镜像站文档
+# 镜像站帮助文档
+===================
+## 地址
 
-中国地质大学开源镜像站文档由多人维护
+http://mirrors.cug.edu.cn/docs/
+
+## 说明
+
+帮助文档主要参考其他高校开源镜像站整理而成

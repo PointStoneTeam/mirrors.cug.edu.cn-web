@@ -4,12 +4,104 @@ mirrorname: ubuntu
 title: Ubuntu
 ---
 
-Ubuntu 镜像使用帮助
+# Ubuntu 镜像使用帮助
 ===================
 
-Ubuntu 的软件源配置文件是
-`/etc/apt/sources.list`。将系统自带的该文件做个备份，将该文件替换为下面内容，即可使用
-TUNA 的软件源镜像。
+## 地址
+http://mirrors.cug.edu.cn/ubuntu/
+
+## 说明
+Ubuntu 软件源
+
+## 收录架构
+AMD64 (x86_64), Intel x86
+
+其他架构请参考 Ubuntu Ports 源使用帮助
+
+## 收录版本
+所有 Ubuntu 当前支持的版本，包括开发版，具体版本见 https://wiki.ubuntu.com/Releases
+
+对于 Ubuntu 不再支持的版本，请参考 Ubuntu Old Releases 源使用帮助
+
+## 使用说明
+### 图形界面配置（新手推荐）
+依次打开：系统设置，软件和更新。在 下载自 中选择 其他站点 ，然后在中国的条目 下选择 mirrors.cug.edu.cn 。
+
+### 手动更改配置文件
+#### 警告
+
+操作前请做好相应备份
+
+一般情况下，将 /etc/apt/sources.list 文件中 Ubuntu 默认的源地址 http://archive.ubuntu.com/ 替换为 http://mirrors.cug.edu.cn 即可。
+
+可以使用如下命令：
+
+sudo sed -i 's/archive.ubuntu.com/mirrors.cug.edu.cn/g' /etc/apt/sources.list
+
+#### 小技巧
+
+如果你在安装时选择的语言不是英语，默认的源地址通常不是 http://archive.ubuntu.com/ ， 而是 http://<country-code>.archive.ubuntu.com/ubuntu/ ，如 http://cn.archive.ubuntu.com/ubuntu/ ， 此时只需将上面的命令进行相应的替换即可，即 sudo sed -i 's/cn.archive.ubuntu.com/mirrors.cug.edu.cn/g' /etc/apt/sources.list 。
+
+当然也可以直接编辑 /etc/apt/sources.list 文件（需要使用 sudo）。以下是 Ubuntu 16.04 参考配置内容：
+
+>\# 默认注释了源码仓库，如有需要可自行取消注释
+
+>deb http://mirrors.cug.edu.cn/ubuntu/ xenial main restricted universe multiverse
+
+>\# deb-src http://mirrors.cug.edu.cn/ubuntu/ xenial main restricted universe multiverse
+
+>deb http://mirrors.cug.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse
+
+>\# deb-src http://mirrors.cug.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse
+
+>deb http://mirrors.cug.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse
+
+>\# deb-src http://mirrors.cug.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse
+
+>deb http://mirrors.cug.edu.cn/ubuntu/ xenial-security main restricted universe multiverse
+
+>\# deb-src http://mirrors.cug.edu.cn/ubuntu/ xenial-security main restricted universe multiverse
+
+>\# 预发布软件源，不建议启用
+
+>\# deb http://mirrors.cug.edu.cn/ubuntu/ xenial-proposed main restricted universe multiverse
+
+>\# deb-src http://mirrors.cug.edu.cn/ubuntu/ xenial-proposed main restricted universe multiverse
 
 
-本镜像仅支持32位和64位x86架构的系统，对于 ARM、PowerPC 架构请使用 ubuntu-ports 镜像。
+更改完 sources.list 文件后请运行 sudo apt-get update 更新索引以生效。
+
+#### 小技巧
+
+如要用于其他版本，把 xenial 换成其他版本代号即可: 18.04：bionic；17.10：artful；16.04：xenial；14.04：trusty。
+
+#### 小技巧
+
+使用 HTTPS 可以有效避免国内运营商的缓存劫持。
+
+另外，也可以使用 snullp 大叔开发的 配置生成器 。
+
+#### 镜像下载
+如果需要下载 Ubuntu 的 ISO 镜像以便安装，请参考 Ubuntu Releases 源使用帮助
+
+### 相关链接
+#### 官方主页
+https://www.ubuntu.com/
+
+#### 文档
+https://help.ubuntu.com/
+
+#### Wiki
+https://wiki.ubuntu.com/
+
+#### 邮件列表
+https://community.ubuntu.com/contribute/support/mailinglists/
+
+#### 提问
+https://askubuntu.com/
+
+#### 论坛
+https://ubuntuforums.org/
+
+中文论坛
+https://forum.ubuntu.org.cn/

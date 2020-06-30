@@ -4,17 +4,71 @@ mirrorname: debian
 title: Debian
 ---
 
-Debian 镜像使用帮助
+# Debian 镜像使用帮助
 ===================
 
-Debian 的软件源配置文件是
-`/etc/apt/sources.list`。将系统自带的该文件做个备份，将该文件替换为下面内容，即可使用
-TUNA 的软件源镜像。
+## 地址
+http://mirrors.cug.edu.cn/debian/
 
-如果遇到无法拉取 https 源的情况，请先使用 http 源并安装：
+## 说明
+Debian 软件源
 
-```
-$ sudo apt install apt-transport-https ca-certificates
-```
+## 收录架构
+Debian 支持的所有架构，如 AMD64 (x86_64), Intel x86, ARM, MIPS, ppc64el, s390x 等
 
-再使用 TUNA 的软件源镜像。
+## 收录版本
+Debian Old Stable, Stable, Testing, Unstable(sid)
+
+当前 Stable 为 Debian 10，代号为 Buster
+
+## 使用说明
+### 警告
+
+操作前请做好相应备份
+
+一般情况下，将 /etc/apt/sources.list 文件中 Debian 默认的源地址 http://deb.debian.org/ 替换为 http://mirrors.cug.edu.cn 即可。
+
+可以使用如下命令：
+
+`sudo sed -i 's/deb.debian.org/mirrors.cug.edu.cn/g' /etc/apt/sources.list`
+
+当然也可以直接编辑 /etc/apt/sources.list 文件（需要使用 sudo）。以下是 Debian Stable 参考配置内容：
+
+deb http://mirrors.cug.edu.cn/debian stable main contrib non-free
+
+\# deb-src http://mirrors.cug.edu.cn/debian stable main contrib non-free
+
+deb http://mirrors.cug.edu.cn/debian stable-updates main contrib non-free
+
+\# deb-src http://mirrors.cug.edu.cn/debian stable-updates main contrib non-free
+
+\# deb http://mirrors.cug.edu.cn/debian stable-proposed-updates main contrib non-free
+
+\# deb-src http://mirrors.cug.edu.cn/debian stable-proposed-updates main contrib non-free
+
+同时你也可能需要更改 Debian Security 源，请参考 Debian Security 源使用帮助
+
+更改完 sources.list 文件后请运行 sudo apt-get update 更新索引以生效。
+
+### 小技巧
+
+使用 HTTPS 可以有效避免国内运营商的缓存劫持，但需要事先安装 apt-transport-https (Debian Buster 及以上版本不需要)。
+
+另外，也可以使用 snullp 大叔开发的 配置生成器 。
+
+### 相关链接
+#### 官方主页
+https://www.debian.org/
+
+#### 邮件列表
+https://www.debian.org/MailingLists/
+
+#### Wiki
+https://wiki.debian.org/
+
+#### 文档
+https://www.debian.org/doc/
+
+#### 镜像列表
+https://www.debian.org/mirror/list
+

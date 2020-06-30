@@ -4,23 +4,33 @@ mirrorname: archlinux
 title: Arch Linux
 ---
 
-## Arch Linux 软件仓库镜像使用帮助
+# Arch Linux 软件仓库镜像使用帮助
+===================
 
-编辑 /etc/pacman.d/mirrorlist， 在文件的最顶端添加：
-```
-Server = https://{{ site.hostname }}/archlinux/$repo/os/$arch
-```
+## 地址
+http://mirrors.cug.edu.cn/archlinux/
 
-更新软件包缓存：
-```
-sudo pacman -Syy
-```
+## 说明
+Arch Linux 软件源
 
-## Arch Linux Rollback Machine使用帮助
+## 收录架构
+i686, x86_64
 
-因为 Arch Linux 的软件仓库和 iso 列表是不维护旧版本的，在少数情况下可能会需要安装旧版本的软件或系统，
-因此TUNA维护了一个[Arch Linux Rollback Machine](https://{{ site.arch_archive }}/)来满足这种情况。
+## 使用说明
+编辑 /etc/pacman.d/mirrorlist ，在文件的最顶端添加
 
-Arch Linux Rollback Machine的使用方法请参照 [wiki](https://wiki.archlinux.org/index.php/Arch_Linux_Archive)。
+Server = http://mirrors.cug.edu.cn/archlinux/$repo/os/$arch
+国内用户，推荐另外使用 Arch Linux CN 的源，请参考 Arch Linux CN 源使用帮助
 
-**需要注意的是，TUNA的Rollback Machine的目录结构与wiki中的目录结构并不相同，配置时请自行替代。**
+### 相关链接
+#### 官方主页
+https://www.archlinux.org/
+
+#### 邮件列表
+https://www.archlinux.org/mailman/listinfo/
+
+#### 论坛
+https://bbs.archlinux.org/
+
+#### Wiki
+https://wiki.archlinux.org/
