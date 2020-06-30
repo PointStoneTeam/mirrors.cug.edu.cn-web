@@ -5,7 +5,6 @@ title: Cent OS
 ---
 
 # CentOS 镜像使用帮助
-===================
 
 ## 地址
 http://mirrors.cug.edu.cn/centos/

@@ -5,7 +5,6 @@ title: Arch Linux
 ---
 
 # Arch Linux 软件仓库镜像使用帮助
-===================
 
 ## 地址
 http://mirrors.cug.edu.cn/archlinux/

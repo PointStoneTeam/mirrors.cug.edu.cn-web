@@ -5,7 +5,6 @@ title: Ubuntu
 ---
 
 # Ubuntu 镜像使用帮助
-===================
 
 ## 地址
 http://mirrors.cug.edu.cn/ubuntu/
