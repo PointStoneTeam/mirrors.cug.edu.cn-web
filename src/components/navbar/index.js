@@ -11,8 +11,8 @@ export default function Navbar() {
       <div className="container flex items-center justify-between py-0 px-6 my-0 mx-auto h-full">
         <div className="text md:text-xl flex items-center">
           <img
-            className="h-6 mr-2 md:h-10 md:mr-4"
-            src={`/icons/logo.png`}
+            className="h-8 mr-2 md:h-12 md:mr-4"
+            src={`/icons/logo.svg`}
           />
           <Link href="/"><a>中国地质大学开源镜像站</a></Link>
         </div>

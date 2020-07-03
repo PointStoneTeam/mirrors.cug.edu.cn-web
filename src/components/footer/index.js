@@ -7,8 +7,8 @@ export default function Footer() {
       <div className="container mx-auto">
         <div className="flex items-center">
           <img
-            className="h-6 mr-2 md:h-10 md:mr-3"
-            src={`/icons/logo.png`}
+            className="h-8 mr-2 md:h-12 md:mr-3"
+            src={`/icons/logo.svg`}
           />
           <h2 className="text-md md:text-xl">中国地质大学开源镜像站</h2>
         </div>
