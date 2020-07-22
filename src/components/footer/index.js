@@ -10,10 +10,10 @@ export default function Footer() {
             className="h-8 mr-2 md:h-12 md:mr-3"
             src={`/icons/logo.svg`}
           />
-          <h2 className="text-md md:text-xl">中国地质大学开源镜像站</h2>
+          {/* <h2 className="text-md md:text-xl">中国地质大学开源镜像站</h2> */}
         </div>
         <div className="mt-2 text-xs md:text-sm">
-          Copyright &copy; 2013 - 2020 由点石团队维护
+          Copyright &copy; 2013 - 2020 中国地质大学开源镜像站由点石团队维护
         </div>
       </div>
     </footer>

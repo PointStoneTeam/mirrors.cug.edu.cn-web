@@ -19,6 +19,7 @@ i686, x86_64
 编辑 /etc/pacman.d/mirrorlist ，在文件的最顶端添加
 
 Server = http://mirrors.cug.edu.cn/archlinux/$repo/os/$arch
+
 国内用户，推荐另外使用 Arch Linux CN 的源，请参考 Arch Linux CN 源使用帮助
 
 ### 相关链接

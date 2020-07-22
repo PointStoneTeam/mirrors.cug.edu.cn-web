@@ -1,7 +1,7 @@
 ---
 category: mirrors
 mirrorname: centos
-title: Cent OS
+title: CentOS
 ---
 
 # CentOS 镜像使用帮助
