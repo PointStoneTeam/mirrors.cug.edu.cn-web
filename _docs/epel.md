@@ -21,13 +21,13 @@ EPEL (Extra Packages for Enterprise Linux) 是由 Fedora Special Interest Group 
 ## 使用说明
 执行以下命令：
 
-`
+```bash
 sudo yum install -y epel-release
 sudo sed -e 's|^metalink=|#metalink=|g' \
          -e 's|^#baseurl=https\?://download.fedoraproject.org/pub/epel/|baseurl=http://mirrors.cug.edu.cn/epel/|g' \
          -i.bak \
          /etc/yum.repos.d/epel.repo
-`
+```
 
 ## 相关链接
 ### WIKI

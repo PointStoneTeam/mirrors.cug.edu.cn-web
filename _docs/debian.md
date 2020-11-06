@@ -32,19 +32,19 @@ Debian Old Stable, Stable, Testing, Unstable(sid)
 `sudo sed -i 's/deb.debian.org/mirrors.cug.edu.cn/g' /etc/apt/sources.list`
 
 当然也可以直接编辑 /etc/apt/sources.list 文件（需要使用 sudo）。以下是 Debian Stable 参考配置内容：
-
+```
 deb http://mirrors.cug.edu.cn/debian stable main contrib non-free
 
-\# deb-src http://mirrors.cug.edu.cn/debian stable main contrib non-free
+# deb-src http://mirrors.cug.edu.cn/debian stable main contrib non-free
 
 deb http://mirrors.cug.edu.cn/debian stable-updates main contrib non-free
 
-\# deb-src http://mirrors.cug.edu.cn/debian stable-updates main contrib non-free
+# deb-src http://mirrors.cug.edu.cn/debian stable-updates main contrib non-free
 
-\# deb http://mirrors.cug.edu.cn/debian stable-proposed-updates main contrib non-free
+# deb http://mirrors.cug.edu.cn/debian stable-proposed-updates main contrib non-free
 
-\# deb-src http://mirrors.cug.edu.cn/debian stable-proposed-updates main contrib non-free
-
+# deb-src http://mirrors.cug.edu.cn/debian stable-proposed-updates main contrib non-free
+```
 同时你也可能需要更改 Debian Security 源，请参考 Debian Security 源使用帮助
 
 更改完 sources.list 文件后请运行 sudo apt-get update 更新索引以生效。
